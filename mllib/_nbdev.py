@@ -10,8 +10,9 @@ index = {"acc_cm": "model.ipynb",
          "after_item": "namegen.ipynb",
          "pad_input_chunk_new": "namegen.ipynb",
          "train_from_scratch": "namegen.ipynb",
-         "pl.Trainer.gen_name": "namegen.ipynb",
-         "load_from_checkpoint": "namegen.ipynb"}
+         "nn.Module.gen_name": "namegen.ipynb",
+         "load_from_checkpoint": "namegen.ipynb",
+         "get_first_name_model": "namegen.ipynb"}
 
 modules = ["seq2seq/model.py",
            "seq2seq/namegen.py"]

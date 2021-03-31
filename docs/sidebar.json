@@ -1,0 +1,8 @@
+{
+  "mllib": {
+    "Overview": "/",
+    "Model": "model.html",
+    "Import": "namegen.html",
+    "Generating names dataset": "run.html"
+  }
+}
