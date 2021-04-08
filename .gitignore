@@ -184,3 +184,5 @@ dmypy.json
 .pt
 .data/
 runs/
+.data/
+.pt
