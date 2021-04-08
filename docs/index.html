@@ -82,18 +82,73 @@ nb_path: "notebooks/index.ipynb"
 
 <div class="output_area">
 
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">RuntimeError</span>                              Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-8-16778c55a3df&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-red-fg"># get the trainer from the module</span>
+<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg"> </span>model <span class="ansi-blue-fg">=</span> namegen<span class="ansi-blue-fg">.</span>get_first_name_model<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      3</span> model<span class="ansi-blue-fg">.</span>cuda<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span> <span class="ansi-red-fg"># TODO remove this requirement</span>
 
+<span class="ansi-green-fg">~/Projects/pytorch/practice/DLProjects/mllib/seq2seq/namegen.py</span> in <span class="ansi-cyan-fg">get_first_name_model</span><span class="ansi-blue-fg">(checkpoint)</span>
+<span class="ansi-green-intense-fg ansi-bold">     83</span> <span class="ansi-green-fg">def</span> get_first_name_model<span class="ansi-blue-fg">(</span>checkpoint<span class="ansi-blue-fg">:</span>str<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#34;final_model.ckpt&#34;</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">     84</span> 
+<span class="ansi-green-fg">---&gt; 85</span><span class="ansi-red-fg">     </span>checkpoint <span class="ansi-blue-fg">=</span> torch<span class="ansi-blue-fg">.</span>load<span class="ansi-blue-fg">(</span>checkpoint<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     86</span>     <span class="ansi-red-fg"># get the model</span>
+<span class="ansi-green-intense-fg ansi-bold">     87</span> 
 
-<div class="output_text output_subarea output_execute_result">
-<pre>RNN(
-  (dropout): Dropout(p=0.2, inplace=False)
-  (embedding): Embedding(104, 30, scale_grad_by_freq=True)
-  (rnn): LSTM(30, 300, num_layers=2, batch_first=True, dropout=0.2)
-  (decoder): Linear(in_features=300, out_features=104, bias=True)
-  (criterion): CrossEntropyLoss()
-)</pre>
+<span class="ansi-green-fg">~/.virtualenvs/torch/lib/python3.9/site-packages/torch/serialization.py</span> in <span class="ansi-cyan-fg">load</span><span class="ansi-blue-fg">(f, map_location, pickle_module, **pickle_load_args)</span>
+<span class="ansi-green-intense-fg ansi-bold">    592</span>                     opened_file<span class="ansi-blue-fg">.</span>seek<span class="ansi-blue-fg">(</span>orig_position<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    593</span>                     <span class="ansi-green-fg">return</span> torch<span class="ansi-blue-fg">.</span>jit<span class="ansi-blue-fg">.</span>load<span class="ansi-blue-fg">(</span>opened_file<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">--&gt; 594</span><span class="ansi-red-fg">                 </span><span class="ansi-green-fg">return</span> _load<span class="ansi-blue-fg">(</span>opened_zipfile<span class="ansi-blue-fg">,</span> map_location<span class="ansi-blue-fg">,</span> pickle_module<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>pickle_load_args<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    595</span>         <span class="ansi-green-fg">return</span> _legacy_load<span class="ansi-blue-fg">(</span>opened_file<span class="ansi-blue-fg">,</span> map_location<span class="ansi-blue-fg">,</span> pickle_module<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>pickle_load_args<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    596</span> 
+
+<span class="ansi-green-fg">~/.virtualenvs/torch/lib/python3.9/site-packages/torch/serialization.py</span> in <span class="ansi-cyan-fg">_load</span><span class="ansi-blue-fg">(zip_file, map_location, pickle_module, pickle_file, **pickle_load_args)</span>
+<span class="ansi-green-intense-fg ansi-bold">    851</span>     unpickler <span class="ansi-blue-fg">=</span> pickle_module<span class="ansi-blue-fg">.</span>Unpickler<span class="ansi-blue-fg">(</span>data_file<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>pickle_load_args<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    852</span>     unpickler<span class="ansi-blue-fg">.</span>persistent_load <span class="ansi-blue-fg">=</span> persistent_load
+<span class="ansi-green-fg">--&gt; 853</span><span class="ansi-red-fg">     </span>result <span class="ansi-blue-fg">=</span> unpickler<span class="ansi-blue-fg">.</span>load<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    854</span> 
+<span class="ansi-green-intense-fg ansi-bold">    855</span>     torch<span class="ansi-blue-fg">.</span>_utils<span class="ansi-blue-fg">.</span>_validate_loaded_sparse_tensors<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">~/.virtualenvs/torch/lib/python3.9/site-packages/torch/serialization.py</span> in <span class="ansi-cyan-fg">persistent_load</span><span class="ansi-blue-fg">(saved_id)</span>
+<span class="ansi-green-intense-fg ansi-bold">    843</span>         data_type<span class="ansi-blue-fg">,</span> key<span class="ansi-blue-fg">,</span> location<span class="ansi-blue-fg">,</span> size <span class="ansi-blue-fg">=</span> data
+<span class="ansi-green-intense-fg ansi-bold">    844</span>         <span class="ansi-green-fg">if</span> key <span class="ansi-green-fg">not</span> <span class="ansi-green-fg">in</span> loaded_storages<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">--&gt; 845</span><span class="ansi-red-fg">             </span>load_tensor<span class="ansi-blue-fg">(</span>data_type<span class="ansi-blue-fg">,</span> size<span class="ansi-blue-fg">,</span> key<span class="ansi-blue-fg">,</span> _maybe_decode_ascii<span class="ansi-blue-fg">(</span>location<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    846</span>         storage <span class="ansi-blue-fg">=</span> loaded_storages<span class="ansi-blue-fg">[</span>key<span class="ansi-blue-fg">]</span>
+<span class="ansi-green-intense-fg ansi-bold">    847</span>         <span class="ansi-green-fg">return</span> storage
+
+<span class="ansi-green-fg">~/.virtualenvs/torch/lib/python3.9/site-packages/torch/serialization.py</span> in <span class="ansi-cyan-fg">load_tensor</span><span class="ansi-blue-fg">(data_type, size, key, location)</span>
+<span class="ansi-green-intense-fg ansi-bold">    832</span> 
+<span class="ansi-green-intense-fg ansi-bold">    833</span>         storage <span class="ansi-blue-fg">=</span> zip_file<span class="ansi-blue-fg">.</span>get_storage_from_record<span class="ansi-blue-fg">(</span>name<span class="ansi-blue-fg">,</span> size<span class="ansi-blue-fg">,</span> dtype<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>storage<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">--&gt; 834</span><span class="ansi-red-fg">         </span>loaded_storages<span class="ansi-blue-fg">[</span>key<span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">=</span> restore_location<span class="ansi-blue-fg">(</span>storage<span class="ansi-blue-fg">,</span> location<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    835</span> 
+<span class="ansi-green-intense-fg ansi-bold">    836</span>     <span class="ansi-green-fg">def</span> persistent_load<span class="ansi-blue-fg">(</span>saved_id<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+
+<span class="ansi-green-fg">~/.virtualenvs/torch/lib/python3.9/site-packages/torch/serialization.py</span> in <span class="ansi-cyan-fg">default_restore_location</span><span class="ansi-blue-fg">(storage, location)</span>
+<span class="ansi-green-intense-fg ansi-bold">    173</span> <span class="ansi-green-fg">def</span> default_restore_location<span class="ansi-blue-fg">(</span>storage<span class="ansi-blue-fg">,</span> location<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">    174</span>     <span class="ansi-green-fg">for</span> _<span class="ansi-blue-fg">,</span> _<span class="ansi-blue-fg">,</span> fn <span class="ansi-green-fg">in</span> _package_registry<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">--&gt; 175</span><span class="ansi-red-fg">         </span>result <span class="ansi-blue-fg">=</span> fn<span class="ansi-blue-fg">(</span>storage<span class="ansi-blue-fg">,</span> location<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    176</span>         <span class="ansi-green-fg">if</span> result <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">not</span> <span class="ansi-green-fg">None</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">    177</span>             <span class="ansi-green-fg">return</span> result
+
+<span class="ansi-green-fg">~/.virtualenvs/torch/lib/python3.9/site-packages/torch/serialization.py</span> in <span class="ansi-cyan-fg">_cuda_deserialize</span><span class="ansi-blue-fg">(obj, location)</span>
+<span class="ansi-green-intense-fg ansi-bold">    149</span> <span class="ansi-green-fg">def</span> _cuda_deserialize<span class="ansi-blue-fg">(</span>obj<span class="ansi-blue-fg">,</span> location<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">    150</span>     <span class="ansi-green-fg">if</span> location<span class="ansi-blue-fg">.</span>startswith<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;cuda&#39;</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">--&gt; 151</span><span class="ansi-red-fg">         </span>device <span class="ansi-blue-fg">=</span> validate_cuda_device<span class="ansi-blue-fg">(</span>location<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    152</span>         <span class="ansi-green-fg">if</span> getattr<span class="ansi-blue-fg">(</span>obj<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#34;_torch_load_uninitialized&#34;</span><span class="ansi-blue-fg">,</span> <span class="ansi-green-fg">False</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">    153</span>             storage_type <span class="ansi-blue-fg">=</span> getattr<span class="ansi-blue-fg">(</span>torch<span class="ansi-blue-fg">.</span>cuda<span class="ansi-blue-fg">,</span> type<span class="ansi-blue-fg">(</span>obj<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>__name__<span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">~/.virtualenvs/torch/lib/python3.9/site-packages/torch/serialization.py</span> in <span class="ansi-cyan-fg">validate_cuda_device</span><span class="ansi-blue-fg">(location)</span>
+<span class="ansi-green-intense-fg ansi-bold">    133</span> 
+<span class="ansi-green-intense-fg ansi-bold">    134</span>     <span class="ansi-green-fg">if</span> <span class="ansi-green-fg">not</span> torch<span class="ansi-blue-fg">.</span>cuda<span class="ansi-blue-fg">.</span>is_available<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">--&gt; 135</span><span class="ansi-red-fg">         raise RuntimeError(&#39;Attempting to deserialize object on a CUDA &#39;
+</span><span class="ansi-green-intense-fg ansi-bold">    136</span>                            <span class="ansi-blue-fg">&#39;device but torch.cuda.is_available() is False. &#39;</span>
+<span class="ansi-green-intense-fg ansi-bold">    137</span>                            <span class="ansi-blue-fg">&#39;If you are running on a CPU-only machine, &#39;</span>
+
+<span class="ansi-red-fg">RuntimeError</span>: Attempting to deserialize object on a CUDA device but torch.cuda.is_available() is False. If you are running on a CPU-only machine, please use torch.load with map_location=torch.device(&#39;cpu&#39;) to map your storages to the CPU.</pre>
 </div>
-
 </div>
 
 </div>
