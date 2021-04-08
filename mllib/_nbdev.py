@@ -2,9 +2,28 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {}
+index = {"SelfAttention": "bert.ipynb",
+         "TransformerBlock": "bert.ipynb",
+         "Encoder": "bert.ipynb",
+         "DecoderBlock": "bert.ipynb",
+         "Decoder": "bert.ipynb",
+         "Transformer": "bert.ipynb",
+         "acc_cm": "model.ipynb",
+         "EncoderRNN": "model.ipynb",
+         "device": "namegen.ipynb",
+         "PAD_ID": "model.ipynb",
+         "RNN": "model.ipynb",
+         "get_dataset": "namegen.ipynb",
+         "after_item": "namegen.ipynb",
+         "pad_input_chunk_new": "namegen.ipynb",
+         "train_from_scratch": "namegen.ipynb",
+         "nn.Module.gen_name": "namegen.ipynb",
+         "load_from_checkpoint": "namegen.ipynb",
+         "get_first_name_model": "namegen.ipynb"}
 
-modules = []
+modules = ["bert.py",
+           "seq2seq/model.py",
+           "seq2seq/namegen.py"]
 
 doc_url = "https://puneet.github.io/mllib/"
 
