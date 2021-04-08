@@ -105,7 +105,7 @@ class TransformerBlock(nn.Module):
 class Encoder(nn.Module):
     def __init__(self, src_vocab_size=1000,
                  embed_size=256, num_layers=6,
-                heads=8, device = torch.device('cpu'),
+                heads=8, device = torch.device('cuda'),
                 forward_expansion=4,
                 dropout=0.2,
                 max_length=512):
@@ -136,7 +136,7 @@ class Encoder(nn.Module):
 
 # Cell
 class DecoderBlock(nn.Module):
-    def __init__(self, embed_size=256, heads = 8, forward_expansion = 4, dropout = 0.2, device = torch.device('cpu')):
+    def __init__(self, embed_size=256, heads = 8, forward_expansion = 4, dropout = 0.2, device = torch.device('cuda')):
         super(DecoderBlock, self).__init__()
         self.attention = SelfAttention(embed_size, heads)
 
@@ -168,7 +168,7 @@ class Decoder(nn.Module):
                 heads=8,
                 forward_expansion=4,
                 dropout=0.2,
-                device=torch.device('cpu'),
+                device=torch.device('cuda'),
                 max_length=512):
         super(Decoder, self).__init__()
         self.device = device
@@ -207,7 +207,7 @@ class Transformer(nn.Module):
                  forward_expansion=4,
                  heads= 8,
                  dropout=0.2,
-                 device=torch.device('cpu'),
+                 device=torch.device('cuda'),
                  max_length=512
                 ):
         super(Transformer, self).__init__()
@@ -252,7 +252,7 @@ class Transformer(nn.Module):
     def forward(self, src, trg):
         src_mask = self.make_src_mask(src)
         trg_mask = self.make_trg_mask(trg)
-
+        
         enc_src = self.encoder(src, src_mask)
         out, attention = self.decoder(trg, enc_src, src_mask, trg_mask)
 
