@@ -129,7 +129,7 @@ if __name__ == '__main__':
     logger = TensorBoardLogger('tb_logs', name='bert')
     model = LitTransformer()
 
-    trainer = Trainer(fast_dev_run=False, progress_bar_refresh_rate=5, max_epochs=10,enable_pl_optimizer=False, 
+    trainer = Trainer(gpus=1,fast_dev_run=False, progress_bar_refresh_rate=5, max_epochs=10,enable_pl_optimizer=False, 
                         callbacks=[
                             ModelTestCallback(test='puneet'), 
                             LogHistogramCallback(),
