@@ -4,13 +4,13 @@ __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
 index = {"SelfAttention": "bert.ipynb",
          "TransformerBlock": "bert.ipynb",
-         "Encoder": "bert.ipynb",
+         "Encoder": "new_bert.ipynb",
          "DecoderBlock": "bert.ipynb",
-         "Decoder": "bert.ipynb",
+         "Decoder": "new_bert.ipynb",
          "Transformer": "bert.ipynb",
          "acc_cm": "model.ipynb",
          "EncoderRNN": "model.ipynb",
-         "device": "namegen.ipynb",
+         "device": "new_bert.ipynb",
          "PAD_ID": "model.ipynb",
          "RNN": "model.ipynb",
          "get_dataset": "namegen.ipynb",
@@ -19,11 +19,29 @@ index = {"SelfAttention": "bert.ipynb",
          "train_from_scratch": "namegen.ipynb",
          "nn.Module.gen_name": "namegen.ipynb",
          "load_from_checkpoint": "namegen.ipynb",
-         "get_first_name_model": "namegen.ipynb"}
+         "get_first_name_model": "namegen.ipynb",
+         "EncoderDecoder": "new_bert.ipynb",
+         "Generator": "new_bert.ipynb",
+         "clones": "new_bert.ipynb",
+         "LayerNorm": "new_bert.ipynb",
+         "SubLayerConnection": "new_bert.ipynb",
+         "EncoderLayer": "new_bert.ipynb",
+         "DecoderLayer": "new_bert.ipynb",
+         "subsequent_mask": "new_bert.ipynb",
+         "attention": "new_bert.ipynb",
+         "MultiHeadAttention": "new_bert.ipynb",
+         "PositionWiseFeedForward": "new_bert.ipynb",
+         "Embeddings": "new_bert.ipynb",
+         "PositionalEncoding": "new_bert.ipynb",
+         "make_model": "new_bert.ipynb",
+         "SimpleLossCompute": "new_bert.ipynb",
+         "LabelSmoothingLoss": "new_bert.ipynb",
+         "LabelSmoothingLoss2": "new_bert.ipynb"}
 
 modules = ["bert.py",
            "seq2seq/model.py",
-           "seq2seq/namegen.py"]
+           "seq2seq/namegen.py",
+           "new_bert.py"]
 
 doc_url = "https://puneet.github.io/mllib/"
 

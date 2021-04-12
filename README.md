@@ -12,6 +12,11 @@ This project aims to generate names automatically by reading initial characters.
 
 To generate names randomly, we first need to load the model and call `gen_name` function.
 
+## Pytorch Lightning grid
+1. grid interactive create --g_name bert-transformer
+2. grid interactive ssh bert-transformer
+
+
 ```python
 # get the trainer from the module
 model = namegen.get_first_name_model()

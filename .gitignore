@@ -185,4 +185,5 @@ dmypy.json
 .data/
 runs/
 .data/
-.pt
+.ckpt
+tb_logs/

@@ -109,22 +109,6 @@ nb_path: "notebooks/run.ipynb"
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>[&#39;AISHA&#39;, &#39;AISHAH&#39;, &#39;AJAY&#39;, &#39;AAISHA&#39;, &#39;AAISHAH&#39;]</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
     {% endraw %}
 
@@ -143,6 +127,8 @@ nb_path: "notebooks/run.ipynb"
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;/notebooks/Projects/Seq2Seq&#39;</span><span class="p">)</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;../&#39;</span><span class="p">)</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;../runs&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -244,20 +230,6 @@ nb_path: "notebooks/run.ipynb"
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>NeptuneLogger will work in online mode
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
     {% endraw %}
 
@@ -292,21 +264,6 @@ nb_path: "notebooks/run.ipynb"
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>GPU available: True, used: True
-TPU available: None, using: 0 TPU cores
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
     {% endraw %}
 
@@ -321,80 +278,6 @@ TPU available: None, using: 0 TPU cores
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>https://app.neptune.ai/puneetgirdhar.in/charnn/e/CHAR-33
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>
-  | Name      | Type             | Params
------------------------------------------------
-0 | dropout   | Dropout          | 0     
-1 | embedding | Embedding        | 3.1 K 
-2 | rnn       | LSTM             | 1.1 M 
-3 | decoder   | Linear           | 31.3 K
-4 | criterion | CrossEntropyLoss | 0     
------------------------------------------------
-1.2 M     Trainable params
-0         Non-trainable params
-1.2 M     Total params
-4.621     Total estimated model params size (MB)
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>{&#39;A&#39;: &#39;AÎहÜÍxxrepxxfakeĢĲहYPशFसÐ&#39;, &#39;B&#39;: &#39;BxxfakeĚŻĖVxxfldŐĂŅĞSČÔÃxxunk&#39;, &#39;R&#39;: &#39;RPŻĲWxxbosZŤÏÔRJYयCF&#39;, &#39;KAR&#39;: &#39;KARxxrepSŁĖZÁÖŽVĂÏxxupÜरŇ&#39;, &#39;TE&#39;: &#39;TEĲČÊŽĖŐÊVAĪÈÐश&#39;, &#39;CHRI&#39;: &#39;CHRIJŤŪOxxrepHŞŤAĂबÜxxunkÌÚ&#39;}
-{&#39;A&#39;: &#39;AĚYAH&#39;, &#39;B&#39;: &#39;BBE&#39;, &#39;R&#39;: &#39;REMIE&#39;, &#39;KAR&#39;: &#39;KARLYN&#39;, &#39;TE&#39;: &#39;TEYON&#39;, &#39;CHRI&#39;: &#39;CHRILKEB&#39;}
-{&#39;A&#39;: &#39;AरN&#39;, &#39;B&#39;: &#39;BEAGAN&#39;, &#39;R&#39;: &#39;RÁTZ&#39;, &#39;KAR&#39;: &#39;KARTO&#39;, &#39;TE&#39;: &#39;TEF&#39;, &#39;CHRI&#39;: &#39;CHRINER&#39;}
-{&#39;A&#39;: &#39;AHER&#39;, &#39;B&#39;: &#39;BAXI&#39;, &#39;R&#39;: &#39;RCPEE&#39;, &#39;KAR&#39;: &#39;KARYA&#39;, &#39;TE&#39;: &#39;TEDA&#39;, &#39;CHRI&#39;: &#39;CHRISTOFER&#39;}
-{&#39;A&#39;: &#39;ADHIR&#39;, &#39;B&#39;: &#39;BAÞĢ&#39;, &#39;R&#39;: &#39;RŢA&#39;, &#39;KAR&#39;: &#39;KAR&#39;, &#39;TE&#39;: &#39;TEGEEN&#39;, &#39;CHRI&#39;: &#39;CHRISEPHER&#39;}
-{&#39;A&#39;: &#39;AÁS&#39;, &#39;B&#39;: &#39;BYDEEN&#39;, &#39;R&#39;: &#39;RČH&#39;, &#39;KAR&#39;: &#39;KARI&#39;, &#39;TE&#39;: &#39;TEĖ&#39;, &#39;CHRI&#39;: &#39;CHRISHUA&#39;}
-{&#39;A&#39;: &#39;ALJT&#39;, &#39;B&#39;: &#39;BYTLAUGH&#39;, &#39;R&#39;: &#39;RŻ&#39;, &#39;KAR&#39;: &#39;KARINE&#39;, &#39;TE&#39;: &#39;TESSOPHE&#39;, &#39;CHRI&#39;: &#39;CHRISPOTH&#39;}
-{&#39;A&#39;: &#39;AMIRA&#39;, &#39;B&#39;: &#39;BOX&#39;, &#39;R&#39;: &#39;RVÂET&#39;, &#39;KAR&#39;: &#39;KARRAH&#39;, &#39;TE&#39;: &#39;TE&#39;, &#39;CHRI&#39;: &#39;CHRISTINNA&#39;}
-{&#39;A&#39;: &#39;AMBER&#39;, &#39;B&#39;: &#39;BRITTA&#39;, &#39;R&#39;: &#39;RŽ&#39;, &#39;KAR&#39;: &#39;KARO&#39;, &#39;TE&#39;: &#39;TELLI&#39;, &#39;CHRI&#39;: &#39;CHRISTOFORO&#39;}
-{&#39;A&#39;: &#39;AZIN&#39;, &#39;B&#39;: &#39;BERCIO&#39;, &#39;R&#39;: &#39;RŞIM&#39;, &#39;KAR&#39;: &#39;KAR&#39;, &#39;TE&#39;: &#39;TEISHA&#39;, &#39;CHRI&#39;: &#39;CHRISTOPHAROUS&#39;}
-{&#39;A&#39;: &#39;ABRĪELLE&#39;, &#39;B&#39;: &#39;BUSH&#39;, &#39;R&#39;: &#39;RŢĞÂURG&#39;, &#39;KAR&#39;: &#39;KARTIM&#39;, &#39;TE&#39;: &#39;TEBORY&#39;, &#39;CHRI&#39;: &#39;CHRISTOPHER&#39;}
-{&#39;A&#39;: &#39;AÕ&#39;, &#39;B&#39;: &#39;BOÐLR&#39;, &#39;R&#39;: &#39;RĀQAR&#39;, &#39;KAR&#39;: &#39;KARYS&#39;, &#39;TE&#39;: &#39;TE&#39;, &#39;CHRI&#39;: &#39;CHRISTIANA&#39;}
-{&#39;A&#39;: &#39;AĢIGASIALO&#39;, &#39;B&#39;: &#39;BĢEWRAN&#39;, &#39;R&#39;: &#39;RŢĞERG&#39;, &#39;KAR&#39;: &#39;KARBJÖRG&#39;, &#39;TE&#39;: &#39;TE&#39;, &#39;CHRI&#39;: &#39;CHRISPUNDER&#39;}
-{&#39;A&#39;: &#39;AYSHU&#39;, &#39;B&#39;: &#39;BEK&#39;, &#39;R&#39;: &#39;RNTĞÐUR&#39;, &#39;KAR&#39;: &#39;KARLEYSA&#39;, &#39;TE&#39;: &#39;TEFACHO&#39;, &#39;CHRI&#39;: &#39;CHRISTIANA&#39;}
-{&#39;A&#39;: &#39;AŞ&#39;, &#39;B&#39;: &#39;BYGALL&#39;, &#39;R&#39;: &#39;RŢĞRÍÐUR&#39;, &#39;KAR&#39;: &#39;KARPA&#39;, &#39;TE&#39;: &#39;TE&#39;, &#39;CHRI&#39;: &#39;CHRISSE&#39;}
-{&#39;A&#39;: &#39;AमFRYD&#39;, &#39;B&#39;: &#39;BBÂKA&#39;, &#39;R&#39;: &#39;RÚDS&#39;, &#39;KAR&#39;: &#39;KARLO&#39;, &#39;TE&#39;: &#39;TESWARAN&#39;, &#39;CHRI&#39;: &#39;CHRISTIANJAMES&#39;}
-{&#39;A&#39;: &#39;A&#39;, &#39;B&#39;: &#39;BJÖRN&#39;, &#39;R&#39;: &#39;RलD&#39;, &#39;KAR&#39;: &#39;KARSHAN&#39;, &#39;TE&#39;: &#39;TERIE&#39;, &#39;CHRI&#39;: &#39;CHRISTALIN&#39;}
-{&#39;A&#39;: &#39;AHN&#39;, &#39;B&#39;: &#39;BJÖRT&#39;, &#39;R&#39;: &#39;RÓD&#39;, &#39;KAR&#39;: &#39;KARLISHA&#39;, &#39;TE&#39;: &#39;TERMAN&#39;, &#39;CHRI&#39;: &#39;CHRISTOPHER&#39;}
-{&#39;A&#39;: &#39;AULAH&#39;, &#39;B&#39;: &#39;BUDUR&#39;, &#39;R&#39;: &#39;RĽ&#39;, &#39;KAR&#39;: &#39;KARLESA&#39;, &#39;TE&#39;: &#39;TEEW&#39;, &#39;CHRI&#39;: &#39;CHRISTION&#39;}
-{&#39;A&#39;: &#39;AHN&#39;, &#39;B&#39;: &#39;BJÖRG&#39;, &#39;R&#39;: &#39;RÚE&#39;, &#39;KAR&#39;: &#39;KARLOSARA&#39;, &#39;TE&#39;: &#39;TELAN&#39;, &#39;CHRI&#39;: &#39;CHRISTYN&#39;}
-{&#39;A&#39;: &#39;AŪD&#39;, &#39;B&#39;: &#39;BYLEE&#39;, &#39;R&#39;: &#39;RÚDŢY&#39;, &#39;KAR&#39;: &#39;KARIM&#39;, &#39;TE&#39;: &#39;TEKO&#39;, &#39;CHRI&#39;: &#39;CHRISTOPHERJOSE&#39;}
-{&#39;A&#39;: &#39;ANA&#39;, &#39;B&#39;: &#39;BYE&#39;, &#39;R&#39;: &#39;RKŞWELLER&#39;, &#39;KAR&#39;: &#39;KARYA&#39;, &#39;TE&#39;: &#39;TEFORD&#39;, &#39;CHRI&#39;: &#39;CHRISTOPHER&#39;}
-
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>1</pre>
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -445,28 +328,6 @@ TPU available: None, using: 0 TPU cores
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>RNN(
-  (dropout): Dropout(p=0.2, inplace=False)
-  (embedding): Embedding(104, 30, scale_grad_by_freq=True)
-  (rnn): LSTM(30, 300, num_layers=2, batch_first=True, dropout=0.2)
-  (decoder): Linear(in_features=300, out_features=104, bias=True)
-  (criterion): CrossEntropyLoss()
-)</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
     {% endraw %}
 
@@ -484,19 +345,179 @@ TPU available: None, using: 0 TPU cores
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
+</div>
+    {% endraw %}
 
-<div class="output_area">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Bert-Transformer">Bert Transformer<a class="anchor-link" href="#Bert-Transformer"> </a></h1><p>Here is an example to use custom bert transformer for seq 2 seq task. I trained the model for German to english translation.</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">spacy</span>
+
+<span class="kn">from</span> <span class="nn">mllib.bert</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">runs.run_bert</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">spacy</span>
 
 
+<span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s1">&#39;cpu&#39;</span><span class="p">)</span>
+</pre></div>
 
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;CHRISTIE&#39;</pre>
+    </div>
+</div>
 </div>
 
 </div>
+    {% endraw %}
 
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">LITTransformer</span><span class="o">.</span><span class="n">load_from_checkpoint</span><span class="p">(</span><span class="s2">&quot;~/trainer.ckpt&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dm</span> <span class="o">=</span> <span class="n">MyDataModule</span><span class="p">(</span><span class="n">batch_size</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dm</span><span class="o">.</span><span class="n">prepare_data</span><span class="p">()</span>
+<span class="n">dm</span><span class="o">.</span><span class="n">setup</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dm</span><span class="o">.</span><span class="n">train_data</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">translate_sentence</span><span class="p">(</span><span class="n">sentence</span><span class="p">,</span> <span class="n">src_vocab</span><span class="p">,</span> <span class="n">trg_vocab</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">device</span><span class="p">,</span> <span class="n">max_len</span><span class="o">=</span><span class="mi">50</span><span class="p">):</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+    <span class="n">BOS_IDX</span> <span class="o">=</span> <span class="n">src_vocab</span><span class="p">[</span><span class="s1">&#39;&lt;bos&gt;&#39;</span><span class="p">]</span>
+    <span class="n">EOS_IDX</span> <span class="o">=</span> <span class="n">trg_vocab</span><span class="p">[</span><span class="s1">&#39;&lt;pad&gt;&#39;</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">sentence</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">nlp</span> <span class="o">=</span> <span class="n">spacy</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;de_core_news_sm&#39;</span><span class="p">)</span>
+        <span class="n">tokens</span> <span class="o">=</span> <span class="p">[</span><span class="n">token</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">nlp</span><span class="p">(</span><span class="n">sentence</span><span class="p">)]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">tokens</span> <span class="o">=</span> <span class="p">[</span><span class="n">token</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">sentence</span><span class="p">]</span>
+    
+    <span class="n">src_indices</span> <span class="o">=</span> <span class="p">[</span><span class="n">BOS_IDX</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="n">src_vocab</span><span class="o">.</span><span class="n">stoi</span><span class="p">[</span><span class="n">token</span><span class="p">]</span> <span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">tokens</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="n">EOS_IDX</span><span class="p">]</span>
+    
+    <span class="n">src_tensor</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">LongTensor</span><span class="p">(</span><span class="n">src_indices</span><span class="p">)</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+    <span class="n">src_mask</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">make_src_mask</span><span class="p">(</span><span class="n">src_tensor</span><span class="p">)</span>
+    
+    <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+        <span class="n">enc_src</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">encoder</span><span class="p">(</span><span class="n">src_tensor</span><span class="p">,</span> <span class="n">src_mask</span><span class="p">)</span>
+        
+    <span class="n">trg_indices</span> <span class="o">=</span> <span class="p">[</span><span class="n">BOS_IDX</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_len</span><span class="p">):</span>
+        <span class="n">trg_tensor</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">LongTensor</span><span class="p">(</span><span class="n">trg_indices</span><span class="p">)</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+        <span class="n">trg_mask</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">make_trg_mask</span><span class="p">(</span><span class="n">trg_tensor</span><span class="p">)</span>
+    
+        <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+            <span class="n">output</span><span class="p">,</span> <span class="n">attention</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">decoder</span><span class="p">(</span><span class="n">trg_tensor</span><span class="p">,</span> <span class="n">enc_src</span><span class="p">,</span> <span class="n">src_mask</span><span class="p">,</span> <span class="n">trg_mask</span><span class="p">)</span>
+            
+            
+            <span class="n">pred_token</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="mi">2</span><span class="p">)[:,</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+            
+            <span class="n">trg_indices</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pred_token</span><span class="p">)</span>
+            
+            <span class="k">if</span> <span class="n">pred_token</span> <span class="o">==</span> <span class="n">EOS_IDX</span><span class="p">:</span>
+                <span class="k">break</span>
+            
+    <span class="n">trg_tokens</span> <span class="o">=</span> <span class="p">[</span><span class="n">trg_vocab</span><span class="o">.</span><span class="n">itos</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">trg_indices</span><span class="p">]</span>
+    
+    <span class="k">return</span> <span class="n">trg_tokens</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">attention</span>
+                                                              
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sentence</span> <span class="o">=</span> <span class="s1">&#39;Zwei junge weiße Männer sind im Freien in der Nähe vieler Büsche.</span><span class="se">\n</span><span class="s1">&#39;</span>
+
+<span class="n">translation</span><span class="p">,</span> <span class="n">attention</span> <span class="o">=</span> <span class="n">translate_sentence</span><span class="p">(</span><span class="n">sentence</span><span class="p">,</span> <span class="n">dm</span><span class="o">.</span><span class="n">src_vocab</span><span class="p">,</span> <span class="n">dm</span><span class="o">.</span><span class="n">trg_vocab</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">model</span><span class="p">,</span> <span class="n">device</span><span class="p">)</span>
+<span class="n">translation</span>
+</pre></div>
+
+    </div>
 </div>
 </div>
 
