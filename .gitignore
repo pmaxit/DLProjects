@@ -187,3 +187,4 @@ runs/
 .data/
 .ckpt
 tb_logs/
+.checkpoints/
