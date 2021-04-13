@@ -1,5 +1,8 @@
 import pytorch_lightning as pl
 import torch
+
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
 class LogHistogramCallback(pl.Callback):
     def __init__(self, patience=25):
         self.patience = patience
