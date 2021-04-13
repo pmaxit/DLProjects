@@ -1,6 +1,7 @@
 import sys
 sys.path.insert(0,'./')
 
+from argparse import ArgumentParser
 from mllib.new_bert import *
 from data_utils import *
 from callbacks import *
@@ -124,12 +125,26 @@ class LitTransformer(pl.LightningModule):
         return DataLoader(self.test_ds, self.batch_size,
                           collate_fn=generate_batch_new,num_workers=self.num_workers)
         
+    @staticmethod
+    def add_model_specific_args(parent_parser):
+        parser = ArgumentParser(parents=[parent_parser], add_help=False)
+        parser.add_argument('--learning_rate', type=float, default=0.0001)
+        parser.add_argument('--batch_size', default=32, type=int)
+        parser.add_argument('--num_workers', default=8, type=int)
+        return parser
 
 if __name__ == '__main__':
-    logger = TensorBoardLogger('tb_logs', name='bert')
-    model = LitTransformer()
+    parser = ArgumentParser()
+    
 
-    trainer = Trainer(gpus=1,fast_dev_run=False, progress_bar_refresh_rate=5, max_epochs=10,enable_pl_optimizer=False, 
+    parser = pl.Trainer.add_argparse_args(parser)
+    parser = LitTransformer.add_model_specific_args(parser)
+    args = parser.parse_args()
+
+    logger = TensorBoardLogger('tb_logs', name='bert')
+    model = LitTransformer(batch_size=args.batch_size, num_workers=args.num_workers, learning_rate=args.learning_rate)
+    
+    trainer = pl.Trainer.from_argparse_args(args, fast_dev_run=False, progress_bar_refresh_rate=5, max_epochs=10,enable_pl_optimizer=False, 
                         callbacks=[
                             ModelTestCallback(test='puneet'), 
                             LogHistogramCallback(),
