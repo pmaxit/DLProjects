@@ -1,5 +1,5 @@
 import pytorch_lightning as pl
-
+import torch
 class LogHistogramCallback(pl.Callback):
     def __init__(self, patience=25):
         self.patience = patience
