@@ -29,6 +29,8 @@ class ModelTestCallback(pl.Callback):
         src_tensor = self.transforms[0](self.test_sentence).unsqueeze(0)
         src_mask = pl_module.make_src_mask(src_tensor)       # N X 1 X 6 X 6
         
+        src_tensor = src_tensor.to(device)
+        src_mask = src_mask.to(device)
         # output tensor
         out = ":"        # initial target
         out_tensor = self.transforms[1](out) 
@@ -38,7 +40,7 @@ class ModelTestCallback(pl.Callback):
         trg_indices = [2]
         for i in range(self.max_len):
             trg_tensor = torch.LongTensor(trg_indices).unsqueeze(0).to(device)
-            trg_mask = pl_module.make_trg_mask(trg_tensor)
+            trg_mask = pl_module.make_trg_mask(trg_tensor).to(device)
         
             with torch.no_grad():
                 output = pl_module.model.decode(enc_src, src_mask, trg_tensor, trg_mask)
