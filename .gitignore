@@ -189,3 +189,4 @@ runs/
 tb_logs/
 .checkpoints/
 __pycache__/
+lightning_logs/

@@ -11,3 +11,4 @@ spacy==2.3.5
 torch==1.8.1
 torchtext==0.9.1
 warmup-scheduler@ git+https://github.com/ildoonet/pytorch-gradual-warmup-lr@6b5e8953a80aef5b324104dc0c2e9b8c34d622bd
+allennlp
